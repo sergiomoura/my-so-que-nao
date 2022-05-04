@@ -29,7 +29,8 @@ module.exports = {
           allowNull: true
         },
         createdAt: Sequelize.DataTypes.DATE,
-        updatedAt: Sequelize.DataTypes.DATE
+        updatedAt: Sequelize.DataTypes.DATE,
+        deletedAt: Sequelize.DataTypes.DATE
       }
     );
   },
