@@ -1,0 +1,48 @@
+PARTE 1 - Configuração Baby Shark:
+    ☐ Criar arquivo .sequelizerc
+    ☐ Configurar no .sequelizerc o arquivo de config para database/config.js
+    ☐ Criar arquivo database/config.js
+        module.exports = {
+            "username": "root",
+            "password": "",
+            "database": "my-so-que-nao",
+            "host": "127.0.0.1",
+            "dialect": "mysql",
+            "port":"3306"
+        }
+    ☐ Criar banco de dados com npx sequelize db:create
+
+PARTE 2 - Configuração Pró:
+    ☐ Instalar biblioteca dotenv
+    ☐ Criar arquivo .env
+    ☐ Setar informações de acesso no .env
+    ☐ Fazer com que o config.js use as variáveis de ambiente definidas no .env
+    ☐ Adicionar o .env ao .gitignore
+    ☐ Criar o .env.example
+    ☐ Commitar tudo!
+
+PARTE 3 - Configurar sistema para migrations/seeders:
+    ☐ Adicionar campo 'migrations-path' no .sequelizerc com caminho para database/migrations
+    ☐ Criar pasta database/migrations
+    ☐ Criar a migration create_usuarios com base no der
+    ☐ Criar seeder de usuarios
+    ☐ Criar a migration create_publicacoes com base no der
+    ☐ Criar seeder de publicacoes
+    ☐ Criar a migration create_amizades com base no der
+    ☐ Criar seeder de amizades
+    ☐ Criar a migration create_curtidas com base no der
+    ☐ Criar seeder de curtidas
+
+    Referências:
+        - Sequelize
+        https://sequelize.org/docs/v6/
+
+        - Sequelize DataTypes
+        https://sequelize.org/docs/v6/core-concepts/model-basics/#data-types
+
+        - Sequelize Migrations e Seeders
+        https://sequelize.org/docs/v6/other-topics/migrations/
+        
+
+
+
