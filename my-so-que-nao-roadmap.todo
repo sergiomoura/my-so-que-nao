@@ -1,7 +1,7 @@
 PARTE 1 - Configuração Baby Shark:
-    ☐ Criar arquivo .sequelizerc
-    ☐ Configurar no .sequelizerc o arquivo de config para database/config.js
-    ☐ Criar arquivo database/config.js
+    ✔ Criar arquivo .sequelizerc @done(22-05-04 10:01)
+    ✔ Configurar no .sequelizerc o arquivo de config para database/config.js @done(22-05-04 10:02)
+    ✔ Criar arquivo database/config.js @done(22-05-04 10:02)
         module.exports = {
             "username": "root",
             "password": "",
@@ -10,16 +10,16 @@ PARTE 1 - Configuração Baby Shark:
             "dialect": "mysql",
             "port":"3306"
         }
-    ☐ Criar banco de dados com npx sequelize db:create
+    ✔ Criar banco de dados com npx sequelize db:create @done(22-05-04 10:02)
 
 PARTE 2 - Configuração Pró:
-    ☐ Instalar biblioteca dotenv
-    ☐ Criar arquivo .env
-    ☐ Setar informações de acesso no .env
-    ☐ Fazer com que o config.js use as variáveis de ambiente definidas no .env
-    ☐ Adicionar o .env ao .gitignore
-    ☐ Criar o .env.example
-    ☐ Commitar tudo!
+    ✔ Instalar biblioteca dotenv @done(22-05-04 10:11)
+    ✔ Criar arquivo .env @done(22-05-04 10:11)
+    ✔ Setar informações de acesso no .env @done(22-05-04 10:11)
+    ✔ Fazer com que o config.js use as variáveis de ambiente definidas no .env @done(22-05-04 10:11)
+    ✔ Adicionar o .env ao .gitignore @done(22-05-04 10:11)
+    ✔ Criar o .env.example @done(22-05-04 10:11)
+    ✔ Commitar tudo! @done(22-05-04 10:11)
 
 PARTE 3 - Configurar sistema para migrations/seeders:
     ☐ Adicionar campo 'migrations-path' no .sequelizerc com caminho para database/migrations
