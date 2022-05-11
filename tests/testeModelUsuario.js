@@ -1,3 +1,10 @@
-const { Usuario } = require('../models');
+const { Usuario, sequelize } = require('../models');
 
-Usuario.findAll().then(result => console.log(result));
+//Encontrar todos
+// Publicacao.findAll().then(result => console.log(result.toJSON()));
+
+//Encontrar pela chave primária
+Usuario.findByPk(2, {include: "publicacoes"}).then(result => {
+    console.log(result.toJSON());
+    sequelize.close();
+});

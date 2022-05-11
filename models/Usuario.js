@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define('Usuario', {
+    let usuario =  sequelize.define('Usuario', {
         id: {
             type: DataTypes.INTEGER,
             autoIncrement: true,
@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(45),
             allowNull: true
           },
+          
           //Não é preciso colocar os timestamps (createdAt, updatedAt, deletedAt)
     }, 
     {
@@ -30,4 +31,13 @@ module.exports = (sequelize, DataTypes) => {
         timestamps: true,
         paranoid: true
     })
+
+    usuario.associate = (models) => {
+      usuario.hasMany(models.Publicacao, {
+        as: "publicacoes", 
+        foreignKey: "usuarios_id"
+      })
+    }
+
+    return usuario;
 }
