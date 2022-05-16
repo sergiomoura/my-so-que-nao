@@ -32,6 +32,7 @@ module.exports = (sequelize, DataTypes) => {
         paranoid: true
     })
 
+    //Para levantar as publicações do usuário direto pelo model de Usuario, precisamos fazer a sua assoiação também.
     usuario.associate = (models) => {
       usuario.hasMany(models.Publicacao, {
         as: "publicacoes", 
