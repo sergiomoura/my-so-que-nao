@@ -1,0 +1,20 @@
+☐ /api/v1
+	
+	☐ /login						[post]		Autenticar usuário. Retorna jwt
+
+	☐ /usuarios			            [post]		Adiciona usuário
+	☐ /usuarios/:id					[patch] 	Atualizar usuário
+	☐ /usuarios/:id		            [delete] 	Remover usuário
+	☐ /usuarios/:id/foto			[get]		Carrega a foto do usuário do id dado
+
+	☐ /amigos						[get]		Listar amigos
+	☐ /amigos/:id					[get]		Pega dados de um amigo
+	☐ /amigos/:id/publicacoes		[get]		Pega as publicacoes de um amigo (paginada)
+
+	☐ /publicacoes			        [get]		Levanta somente as própias publicações (paginada)
+	☐ /publicacoes			        [post]		Cria uma nova publicacao
+	☐ /publicacoes/:id		        [delete]	Remover publicação
+	☐ /publicacoes/:id/curtidores 	[get]		Levanta usuarios que curtiram publicacao
+	☐ /publicacoes/:id/curtidores 	[post]		Adiciona curtida a uma publicação
+
+	☐ /feed				            [get]		Levanta publicações dos amigos (paginada. Decrescente por data)
