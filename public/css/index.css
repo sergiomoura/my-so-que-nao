@@ -1,0 +1,157 @@
+@import url(geral.css);
+
+header {
+  background-color: var(--primary);
+  color: white;
+  border-bottom: 1px solid var(--primary-darker);
+}
+
+header .container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .container .personal-data{
+  display: grid;
+  grid-template-areas: "a b"
+                       "a c";
+  padding: 16px;
+  grid-template-rows: 1.8rem auto;
+  gap: 10px;
+  color: var(--dark-font-color);
+}
+
+header .container .personal-data img{
+  border-radius: 50%;
+  width: 64px;
+  grid-area: a;
+}
+
+header .container .personal-data span{
+  grid-area: b;
+  margin: 0;
+  color: #FFF;
+  font-size: 1.8rem;
+}
+
+header .container .personal-data a{
+  grid-area: c;
+  color: var(--primary-lighter);
+}
+
+main {
+  margin: 10px auto !important;
+  display: flex;
+  gap: 10px;
+  min-height: 100%;
+}
+
+main > * {
+  padding: 20px;
+}
+
+main > aside.left {
+  width: 300px;
+  background-color: var(--transparency);
+}
+
+main > aside.left > h2, main > section > h2{
+  margin: 0 0 16px 0;
+  color: var(--dark-font-color);
+}
+
+#listaDeAmigos > article {
+  border-bottom: 1px solid var(--primary-lighter);
+  padding: 10px;
+  cursor: pointer;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 44px 1fr;
+  grid-template-areas: "a b"
+                       "a c"
+}
+
+#listaDeAmigos > article:hover{
+  background-color: var(--transparency);
+}
+
+#listaDeAmigos > article > img {
+  width: 32px;
+  border-radius: 50%;
+  grid-area: a;
+}
+
+#listaDeAmigos > article > span {
+  grid-area: b;
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: var(--dark-font-color);
+}
+
+#listaDeAmigos > article > a {
+  grid-area: c;
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: var(--dark-font-color);
+}
+
+main > section{
+  flex-grow: 1;
+  background-color: var(--transparency);
+}
+
+#formNovaPublicacao{
+  display: grid;
+  grid-template-areas: "f a a"
+                        "f b c";
+  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-rows: auto 28px;
+  gap: 20px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--primary-lighter);
+}
+
+#formNovaPublicacao > img {
+  grid-area: f;
+  width: 100%;
+  border: 1px solid var(--primary-lighter);
+}
+
+#formNovaPublicacao > textarea{
+  resize: none;
+  grid-area: a;
+}
+
+#formNovaPublicacao > label > input{
+  display: none;
+}
+
+#feed article{
+  padding: 20px 0;
+  border-bottom: 1px solid var(--primary-lighter);
+}
+
+#feed article:first-child{
+  padding: 0 0 20px 0;
+}
+
+#feed article:last-child{
+  border-bottom: none;
+}
+
+main > aside.right{
+  width: 300px;
+  background-color: var(--transparency);
+}
+
+footer {
+  background-color: var(--primary);
+  border-top: var(--primary-darker);
+}
+
+footer .container{
+  padding: 20px;
+  color: #FFF;
+}

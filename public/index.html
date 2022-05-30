@@ -1,13 +1,145 @@
-<html>
-
+<!DOCTYPE html>
+<html lang="pt-br" class="spectrum spectrum--medium spectrum--light">
 <head>
-  <title>Express</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My SóQueNão</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp:opsz,wght,FILL,GRAD@48,400,1,0');
+    @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+    </style>
+  <link rel="stylesheet" href="css/index.css">
 </head>
-
 <body>
-  <h1>Express</h1>
-  <p>Welcome to Express</p>
-</body>
+  
+  <header>
+    <div class="container">
+      <div class="personal-data">
+        <img src="img/face.jpg" alt="Foto de Fulano">
+        <span>Nome da Pessoa</span>
+        <a href="mailto:email@da-pessoa.com">email@da-pessoa.com</a>
+      </div>
+      <div class="controles">
+        <i class="material-symbols-sharp">logout</i>
+      </div>
+    </div>
+  </header>
 
+  <main class="container">
+
+    <aside class="left">
+      <h2>Amigos</h2>
+      <section id="listaDeAmigos">
+        <article>
+          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+          <span>Nome do Amigo 1</span>
+          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+        </article>
+        <article>
+          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+          <span>Nome do Amigo 1</span>
+          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+        </article>
+        <article>
+          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+          <span>Nome do Amigo 1</span>
+          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+        </article>
+        <article>
+          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+          <span>Nome do Amigo 1</span>
+          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+        </article>
+        <article>
+          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+          <span>Nome do Amigo 1</span>
+          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+        </article>
+        <article>
+          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+          <span>Nome do Amigo 1</span>
+          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+        </article>
+        <article>
+          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+          <span>Nome do Amigo 1</span>
+          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+        </article>
+      </section>
+    </aside>
+    
+    <section>
+      <h2>Nova Publicação</h2>
+
+      <form id="formNovaPublicacao">
+        <img src="img/placeholder.png" alt="Imagem dinâmica">
+        <textarea id="textNovaPublicacao" placeholder="O que você tem em mente?"></textarea>
+        <label for="imagemNovaPublicacao">
+          <span class="button secondary">Escolher foto</span>
+          <input type="file" name="imagemNovaPublicacao" id="imagemNovaPublicacao">
+        </label>
+        <button class="primary" type="submit">Publicar</button>
+      </form>
+
+      <h2>Feed</h2>
+      
+      <div id="feed">
+        <article>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+        </article>
+
+        <article>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+        </article>
+
+        <article>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+        </article>
+        
+        <article>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+        </article>
+        
+        <article>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+        </article>
+        <!--
+        <article>
+          
+          <div class="autor">
+            <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+            <span>Nome do Autor</span>
+            <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+          </div>
+
+          <img src="img/imagem.jpg" class="publicacao" alt="Imagem dinâmica">
+          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maiores facere ex sint officiis sapiente debitis. Accusamus cum ipsum temporibus molestiae ab sunt natus quisquam libero reiciendis, obcaecati, ex aut.</p>
+          <i class="material-symbols-sharp">favorite</i>
+          <span class="curtidas">132 curtiram</span>
+          <span class="data">30 maio 2022, 10:45</span>
+
+        </article>
+        -->
+
+      </div>
+      
+    </section>
+    
+    <aside class="right">
+      
+      <div class="search-container">
+        <input type="search" name="busca" id="busca" placeholder="Quem você procura?">
+        <button class="primary">Buscar</button>
+      <a class="button" href="sss">Link para um lugar</a>
+      </div>
+
+    </aside>
+  </main>
+
+  <footer>
+    <div class="container">&copy; My SóQueNão - Nenhum direito reservado. Use como quiser.</div>
+  </footer>
+  
+</body>
 </html>

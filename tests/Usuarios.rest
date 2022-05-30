@@ -1,0 +1,17 @@
+@host = http://localhost
+@port = 3000
+
+@baseUrl = {{host}}:{{port}}/api/v1/usuarios
+
+###
+GET {{baseUrl}}?q=3 HTTP/1.1
+
+###
+POST {{baseUrl}} HTTP/1.1
+Content-Type: application/json
+
+{
+    "nome":"Teste 1000",
+    "email":"teste1000@teste.com",
+    "senha":"123456"
+}

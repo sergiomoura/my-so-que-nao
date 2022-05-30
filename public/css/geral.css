@@ -1,0 +1,74 @@
+:root {
+    --primary: #212121;
+    --primary-lighter: #C0C0C0;
+    --primary-darker: #101010;
+    --secondary: #8A5121;
+    --transparency: rgba(255, 255, 255, 0.4);
+    --light-font-color: #C0C0C0;
+    --dark-font-color: #454545;
+    --grey: #CCC;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+html {
+    height: 100%;
+    font-size: 18px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    background-color: var(--primary-lighter);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+input[type=text], input[type=search] {
+    padding: 5px;
+    border: none;
+    font-size: 1rem;
+}
+
+button, .button {
+    display: inline-block;
+    border: none;
+    font-size: 0.8rem;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: var(--grey);
+    color: inherit;
+    border-radius: 4px;
+}
+
+button.primary, .button.primary{
+    background-color: var(--primary);
+    color: var(--primary-lighter);
+}
+
+button.secondary, .button.secondary{
+    background-color: var(--secondary);
+    color: var(--primary-lighter);
+}
+
+textarea {
+    border: none;
+    background-color: #FFF;
+    opacity: 0.5;
+    padding: 10px;
+    font-size: 1rem;
+    transition: opacity 0.3s linear;
+}
+
+textarea:focus{
+    opacity: 1;
+    outline: 1px solid var(--primary);
+}
