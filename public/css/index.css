@@ -99,6 +99,7 @@ main > aside.left > h2, main > section > h2{
 main > section{
   flex-grow: 1;
   background-color: var(--transparency);
+  
 }
 
 #formNovaPublicacao{
