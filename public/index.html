@@ -13,134 +13,162 @@
 </head>
 <body>
   
-  <header>
-    <div class="container">
-      <div class="personal-data">
-        <img src="img/face.jpg" alt="Foto de Fulano">
-        <span>Nome da Pessoa</span>
-        <a href="mailto:email@da-pessoa.com">email@da-pessoa.com</a>
-      </div>
+  <div id="registro">
+    <form>
+      <label>
+        <span>E-mail:</span>
+        <input type="email" name="email">
+      </label>
+      <label>
+        <span>Senha:</span>
+        <input type="password" name="senha">
+      </label>
+      <label>
+        <span>Confirme a senha:</span>
+        <input type="password" name="confirmacao" onblur="verificaCampoPreenchido(event)">
+      </label>
+      <label class="foto-container">
+        <span>Clique para selecionar uma foto</span>
+        <input type="file" name="confirmacao">
+      </label>
       <div class="controles">
-        <i class="material-symbols-sharp">logout</i>
+        <button>Cancelar</button>
+        <button class="primary">Entrar</button>
       </div>
-    </div>
-  </header>
+      <img id="output" />
+    </form>
+  </div>
 
-  <main class="container">
-
-    <aside class="left">
-      <h2>Amigos</h2>
-      <section id="listaDeAmigos">
-        <article>
-          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-          <span>Nome do Amigo 1</span>
-          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-        </article>
-        <article>
-          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-          <span>Nome do Amigo 1</span>
-          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-        </article>
-        <article>
-          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-          <span>Nome do Amigo 1</span>
-          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-        </article>
-        <article>
-          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-          <span>Nome do Amigo 1</span>
-          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-        </article>
-        <article>
-          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-          <span>Nome do Amigo 1</span>
-          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-        </article>
-        <article>
-          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-          <span>Nome do Amigo 1</span>
-          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-        </article>
-        <article>
-          <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-          <span>Nome do Amigo 1</span>
-          <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-        </article>
-      </section>
-    </aside>
-    
-    <section>
-      <h2>Nova Publicação</h2>
-
-      <form id="formNovaPublicacao">
-        <img src="img/placeholder.png" alt="Imagem dinâmica">
-        <textarea id="textNovaPublicacao" placeholder="O que você tem em mente?"></textarea>
-        <label for="imagemNovaPublicacao">
-          <span class="button secondary">Escolher foto</span>
-          <input type="file" name="imagemNovaPublicacao" id="imagemNovaPublicacao">
-        </label>
-        <button class="primary" type="submit">Publicar</button>
-      </form>
-
-      <h2>Feed</h2>
-      
-      <div id="feed">
-        <article>
-          Quero que a mágica aconteça!
-          A gente consegue automatizar!
-        </article>
-
-        <article>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
-        </article>
-
-        <article>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
-        </article>
-        
-        <article>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
-        </article>
-        
-        <article>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
-        </article>
-        <!--
-        <article>
-          
-          <div class="autor">
+  <div id="app">
+    <header>
+      <div class="container">
+        <div class="personal-data">
+          <img src="img/face.jpg" alt="Foto de Fulano">
+          <span>Nome da Pessoa</span>
+          <a href="mailto:email@da-pessoa.com">email@da-pessoa.com</a>
+        </div>
+        <div class="controles">
+          <i class="material-symbols-sharp">logout</i>
+        </div>
+      </div>
+    </header>
+  
+    <main class="container">
+  
+      <aside class="left">
+        <h2>Amigos</h2>
+        <section id="listaDeAmigos">
+          <article>
             <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
-            <span>Nome do Autor</span>
+            <span>Nome do Amigo 1</span>
             <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
-          </div>
-
-          <img src="img/imagem.jpg" class="publicacao" alt="Imagem dinâmica">
-          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maiores facere ex sint officiis sapiente debitis. Accusamus cum ipsum temporibus molestiae ab sunt natus quisquam libero reiciendis, obcaecati, ex aut.</p>
-          <i class="material-symbols-sharp">favorite</i>
-          <span class="curtidas">132 curtiram</span>
-          <span class="data">30 maio 2022, 10:45</span>
-
-        </article>
-        -->
-
-      </div>
+          </article>
+          <article>
+            <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+            <span>Nome do Amigo 1</span>
+            <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+          </article>
+          <article>
+            <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+            <span>Nome do Amigo 1</span>
+            <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+          </article>
+          <article>
+            <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+            <span>Nome do Amigo 1</span>
+            <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+          </article>
+          <article>
+            <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+            <span>Nome do Amigo 1</span>
+            <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+          </article>
+          <article>
+            <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+            <span>Nome do Amigo 1</span>
+            <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+          </article>
+          <article>
+            <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+            <span>Nome do Amigo 1</span>
+            <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+          </article>
+        </section>
+      </aside>
       
-    </section>
-    
-    <aside class="right">
+      <section>
+        <h2>Nova Publicação</h2>
+  
+        <form id="formNovaPublicacao">
+          <img src="img/placeholder.png" alt="Imagem dinâmica">
+          <textarea id="textNovaPublicacao" placeholder="O que você tem em mente?"></textarea>
+          <label for="imagemNovaPublicacao">
+            <span class="button secondary">Escolher foto</span>
+            <input type="file" name="imagemNovaPublicacao" id="imagemNovaPublicacao">
+          </label>
+          <button class="primary" type="submit">Publicar</button>
+        </form>
+  
+        <h2>Feed</h2>
+        
+        <div id="feed">
+          <article>
+            Quero que a mágica aconteça!
+            A gente consegue automatizar!
+          </article>
+  
+          <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+          </article>
+  
+          <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+          </article>
+          
+          <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+          </article>
+          
+          <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis praesentium nostrum quia dolorum quam corrupti quo, obcaecati sequi quasi quod laborum magni laboriosam mollitia, neque illum ad pariatur quos molestiae.
+          </article>
+          <!--
+          <article>
+            
+            <div class="autor">
+              <img src="img/face.jpg" alt="Foto de Nome do Amigo 1">
+              <span>Nome do Autor</span>
+              <a href="mailto:email@goamigo1.com">email@goamigo1.com</a>
+            </div>
+  
+            <img src="img/imagem.jpg" class="publicacao" alt="Imagem dinâmica">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Error maiores facere ex sint officiis sapiente debitis. Accusamus cum ipsum temporibus molestiae ab sunt natus quisquam libero reiciendis, obcaecati, ex aut.</p>
+            <i class="material-symbols-sharp">favorite</i>
+            <span class="curtidas">132 curtiram</span>
+            <span class="data">30 maio 2022, 10:45</span>
+  
+          </article>
+          -->
+  
+        </div>
+        
+      </section>
       
-      <div class="search-container">
-        <input type="search" name="busca" id="busca" placeholder="Quem você procura?">
-        <button class="primary">Buscar</button>
-      <a class="button" href="sss">Link para um lugar</a>
-      </div>
-
-    </aside>
-  </main>
-
-  <footer>
-    <div class="container">&copy; My SóQueNão - Nenhum direito reservado. Use como quiser.</div>
-  </footer>
+      <aside class="right">
+        
+        <div class="search-container">
+          <input type="search" name="busca" id="busca" placeholder="Quem você procura?">
+          <button class="primary">Buscar</button>
+        <a class="button" href="sss">Link para um lugar</a>
+        </div>
+  
+      </aside>
+    </main>
+  
+    <footer>
+      <div class="container">&copy; My SóQueNão - Nenhum direito reservado. Use como quiser.</div>
+    </footer>
+  </div>
   
   <script src="js/index.js"></script>
 
