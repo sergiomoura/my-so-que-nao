@@ -1,0 +1,5 @@
+☐ Detectar o evento de envio do formulário.
+☐ Desenvolver a função que será executada com submissão do formulário:
+    ☐ Capturar os dados do formulário
+    ☐ Enviar esses dados ao backend *SEM recarragar a página*!
+    ☐ Receber as informações do backend(sucesso/fracasso) e reagir adequadamente
