@@ -4,10 +4,12 @@ const bcrypt = require('bcrypt');
 
 module.exports = {
     registrar: async (req, res) => {
-    try {
+        try {
             // Capturando os dados do corpo da requisição
             const {nome, email, senha, foto} = req.body;
 
+            return res.json(req.body);
+            /*
             // Criptografando a senha inserida pelo usuario
             const hash = bcrypt.hashSync(senha, 10);
 
@@ -24,7 +26,7 @@ module.exports = {
 
             // Retornando informação de sucesso para o cliente
             return res.status(201).json(novoUsuario);
-
+            */
         } catch (error) {
             console.log(error);
             res.status(500).json({error});
