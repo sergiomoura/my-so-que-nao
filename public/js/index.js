@@ -16,17 +16,20 @@ const onFileChange = evento => {
 
 
 // 1 - Capturar os elementos do HTML para o JS
+let inputNome = document.getElementById('nome');
 let inputEmail = document.querySelector('#registro > form input[type=email]');
 let inputSenha = document.querySelector('#registro > form input[type=password]');
+let inputConfirmacao = document.querySelector('#registro > form input[name=confirmacao]');
 let inputFile = document.querySelector('#registro > form input[type=file]');
 let form = document.getElementById('formularioCadastro');
 
 // 2 - Associar ao evento "perdeu o foco" uma função
 // 3 - A função vai avisar ao usuário que o campo de
 //     email foi deixado em branco
-inputEmail.addEventListener('keypress', verificaCampoPreenchido);
+inputNome.addEventListener('blur', verificaCampoPreenchido);
+inputEmail.addEventListener('blur', verificaCampoPreenchido);
 inputSenha.addEventListener('blur', verificaCampoPreenchido);
-// inputFile.addEventListener('change', onFileChange);
+inputFile.addEventListener('change', onFileChange);
 form.addEventListener(
     'submit',
     (evt)=>{
@@ -37,13 +40,23 @@ form.addEventListener(
         // Levantando os dados do formulário
         let formData = new FormData(form);
         
+
+        // Construindo um objeto com os dados do formulário
+        // let corpoDaRequisicao = {
+        //     nome: inputNome.value,
+        //     email: inputEmail.value,
+        //     senha: inputSenha.value
+        // }
+
         // fetch
         fetch(
             'http://localhost:3000/api/v1/usuarios',
             {
                 method:'POST',
                 body: formData,
-                headers:{'Content-Type': 'multipart/form-data'}
+                // headers:{'Content-Type': 'application/json'}
+                // headers:{'Content-Type': 'application/x-www-form-urlencoded'}
+                // headers:{'Content-Type': 'multipart/form-data'}
             }
         );
     }

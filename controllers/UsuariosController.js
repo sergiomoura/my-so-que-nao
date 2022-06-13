@@ -6,9 +6,9 @@ module.exports = {
     registrar: async (req, res) => {
         try {
             // Capturando os dados do corpo da requisição
-            const {nome, email, senha, foto} = req.body;
+            // const {nome, email, senha, foto} = req.body;
 
-            return res.json(req.body);
+            return res.json({body: req.body, file:req.file});
             /*
             // Criptografando a senha inserida pelo usuario
             const hash = bcrypt.hashSync(senha, 10);
