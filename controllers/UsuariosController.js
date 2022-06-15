@@ -6,27 +6,25 @@ module.exports = {
     registrar: async (req, res) => {
         try {
             // Capturando os dados do corpo da requisição
-            // const {nome, email, senha, foto} = req.body;
+            const {nome, email, senha} = req.body;
 
-            return res.json({body: req.body, file:req.file});
-            /*
             // Criptografando a senha inserida pelo usuario
             const hash = bcrypt.hashSync(senha, 10);
 
             // Verificando se o e-mail já existe
             const verificarUsuarioCadastrado = await Usuario.findOne({where:{email:email}})
             if(verificarUsuarioCadastrado){
-                return res.status(409).json({erro: 'Falha na autenticação'});
+                return res.status(409).json({erro: 'Usuário com email já cadastrado'});
             }
 
             // Criando um novo usuário
             const novoUsuario = await Usuario.create(
-                {nome, email, senha:hash, foto}
+                {nome, email, senha:hash, foto: req.file?.filename}
             )
 
             // Retornando informação de sucesso para o cliente
             return res.status(201).json(novoUsuario);
-            */
+            
         } catch (error) {
             console.log(error);
             res.status(500).json({error});
