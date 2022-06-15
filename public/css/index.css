@@ -1,6 +1,7 @@
 @import url(geral.css);
 
 #registro {
+  display: block;
   width: 400px;
   margin: 200px auto;
   padding: 40px;
