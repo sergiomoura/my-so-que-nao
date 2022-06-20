@@ -1,0 +1,43 @@
+#login {
+    display: block;
+    width: 400px;
+    margin: 200px auto;
+    padding: 40px;
+    background-color: var(--primary-darker);
+    color: #FFF;
+    position: relative;
+}
+
+#login form {
+    display: flex;
+    flex-direction: column;
+}
+
+#login form label {
+    margin-bottom: 20px;
+}
+
+#login form label span {
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 3px;
+}
+
+#login form label input{
+    width:100%
+}
+  
+#login .controles{
+    display: flex;
+    justify-content: space-between;
+}
+
+#login span{
+    margin-top: 15px;
+  }
+
+#login a {
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+    margin-top: 10px
+}

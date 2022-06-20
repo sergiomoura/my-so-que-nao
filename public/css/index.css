@@ -1,7 +1,8 @@
 @import url(geral.css);
+@import url(login.css);
 
 #registro {
-  display: block;
+  display: none;
   width: 400px;
   margin: 200px auto;
   padding: 40px;
