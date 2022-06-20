@@ -32,35 +32,58 @@ inputSenha.addEventListener('blur', verificaCampoPreenchido);
 inputFile.addEventListener('change', onFileChange);
 form.addEventListener(
     'submit',
-    (evt)=>{
+    async (evt) => {
 
         // Impedir o formulário de ser enviado...
         evt.preventDefault();
 
         // Levantando os dados do formulário
         let formData = new FormData(form);
-        
 
-        // Construindo um objeto com os dados do formulário
-        // let corpoDaRequisicao = {
-        //     nome: inputNome.value,
-        //     email: inputEmail.value,
-        //     senha: inputSenha.value
-        // }
-
-        // fetch
-        fetch(
+        // Enviando o formData para o servirdor
+        // usando a função fetch (ASSÍNCRONA)
+        let response = await fetch(
             'http://localhost:3000/api/v1/usuarios',
             {
                 method:'POST',
-                body: formData,
-                // headers:{'Content-Type': 'application/json'}
-                // headers:{'Content-Type': 'application/x-www-form-urlencoded'}
-                // headers:{'Content-Type': 'multipart/form-data'}
+                body: formData
             }
         );
+
+        if(response.status == 409){alert("Usuário já cadstrado")}
+        if(response.status == 500){alert("Erro. Tente novamente mais tarde.")}
+        if(response.status == 201){
+            let usuario = await response.json();
+            mostrarApp(usuario);
+        }
+        
+        
     }
 );
+
+function mostrarApp(usuario){
+    console.log(usuario);
+
+    // Esconder a div de registro
+    document.getElementById("registro").style.display = 'none';
+
+    // Mostrar a div da aplicação
+    document.getElementById("app").style.display = 'block';
+
+    // Preencher os locais com as info do usuario
+    // Nome do usuário...
+    document.getElementById('app-nome').innerText = usuario.nome;
+
+    // E-mail
+    let aEmail = document.getElementById('app-email');
+    aEmail.innerText = usuario.email;
+    aEmail.setAttribute('href',`mailto:${usuario.email}`);
+
+    // Imagem/Avatar
+    let imgAvatar = document.getElementById('app-avatar');
+    imgAvatar.setAttribute('alt',`Foto de ${usuario.nome}`);
+    imgAvatar.setAttribute('src',`img/avatares/${usuario.foto}`);
+}
 
 
 

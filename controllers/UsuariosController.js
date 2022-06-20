@@ -5,6 +5,7 @@ const bcrypt = require('bcrypt');
 module.exports = {
     registrar: async (req, res) => {
         try {
+            
             // Capturando os dados do corpo da requisição
             const {nome, email, senha} = req.body;
 
