@@ -22,6 +22,8 @@ let inputSenha = document.querySelector('#registro > form input[type=password]')
 let inputConfirmacao = document.querySelector('#registro > form input[name=confirmacao]');
 let inputFile = document.querySelector('#registro > form input[type=file]');
 let form = document.getElementById('formularioCadastro');
+let formLogin = document.getElementById('formularioLogin');
+
 
 // 2 - Associar ao evento "perdeu o foco" uma função
 // 3 - A função vai avisar ao usuário que o campo de
@@ -61,6 +63,13 @@ form.addEventListener(
     }
 );
 
+formLogin.addEventListener('submit', onFormLoginSubmit)
+  
+function onFormLoginSubmit(evt){
+    evt.preventDefault();
+    login();
+}
+
 function mostrarApp(usuario){
     console.log(usuario);
 
@@ -85,6 +94,23 @@ function mostrarApp(usuario){
     imgAvatar.setAttribute('src',`img/avatares/${usuario.foto}`);
 }
 
+async function login(){
+    // Capturar o login e a senha digitadas pelo visitante
+    let email = document.getElementById('login-email').value;
+    let senha = document.getElementById('login-senha').value;
+
+    // Enviar a requisição para a rota
+    let response = await fetch(
+        'api/v1/usuarios/login',
+        {
+            method:'POST',
+            body: JSON.stringify({email, senha}),
+            headers: {
+                'Content-Type':'application/json'
+            }
+        }
+    )
+}
 
 
 
