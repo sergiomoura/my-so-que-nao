@@ -23,6 +23,8 @@ let inputConfirmacao = document.querySelector('#registro > form input[name=confi
 let inputFile = document.querySelector('#registro > form input[type=file]');
 let form = document.getElementById('formularioCadastro');
 let formLogin = document.getElementById('formularioLogin');
+let linkRegistro = document.getElementById('linkRegistro');
+let linkLogin = document.getElementById('linkLogin');
 
 
 // 2 - Associar ao evento "perdeu o foco" uma função
@@ -32,6 +34,8 @@ inputNome.addEventListener('blur', verificaCampoPreenchido);
 inputEmail.addEventListener('blur', verificaCampoPreenchido);
 inputSenha.addEventListener('blur', verificaCampoPreenchido);
 inputFile.addEventListener('change', onFileChange);
+linkRegistro.addEventListener('click', onLinkRegistroClick);
+linkLogin.addEventListener('click', onLinkLoginClick);
 form.addEventListener(
     'submit',
     async (evt) => {
@@ -64,7 +68,17 @@ form.addEventListener(
 );
 
 formLogin.addEventListener('submit', onFormLoginSubmit)
-  
+
+function onLinkRegistroClick(evt){
+    evt.preventDefault();
+    mostrarRegistro();
+}
+
+function onLinkLoginClick(evt){
+    evt.preventDefault();
+    mostrarLogin();
+}
+
 function onFormLoginSubmit(evt){
     evt.preventDefault();
     login();
@@ -94,6 +108,34 @@ function mostrarApp(usuario){
     let imgAvatar = document.getElementById('app-avatar');
     imgAvatar.setAttribute('alt',`Foto de ${usuario.nome}`);
     imgAvatar.setAttribute('src',`img/avatares/${usuario.foto}`);
+}
+
+function mostrarLogin(){
+    // Esconder a div de registro
+    document.getElementById("registro").style.display = 'none';
+
+    // Mostrar a div de login
+    document.getElementById("login").style.display = 'block'
+
+    // Mostrar a div da aplicação
+    document.getElementById("app").style.display = 'none';
+
+    // Por foco no campo inputNome
+    document.getElementById('login-email').focus();
+}
+
+function mostrarRegistro(){
+    // Mostrar a div de registro
+    document.getElementById("registro").style.display = 'block';
+
+    // Esconder a div de login
+    document.getElementById("login").style.display = 'none'
+
+    // Esconder a div da aplicação
+    document.getElementById("app").style.display = 'none';
+
+    // Por foco no campo inputNome
+    inputNome.focus();
 }
 
 async function login(){

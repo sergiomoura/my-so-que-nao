@@ -1,0 +1,72 @@
+#registro {
+    display: none;
+    width: 400px;
+    margin: 200px auto;
+    padding: 40px;
+    background-color: var(--primary-darker);
+    color: #FFF;
+    position: relative;
+  }
+  
+  #registro form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #registro form label{
+    margin-bottom: 20px;
+  }
+  
+  #registro form label span{
+    display: block;
+    font-size: 0.7rem;
+    margin-bottom: 3px;
+  }
+  
+  #registro form label.foto-container{
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--primary);
+    cursor: pointer;
+  }
+  
+  #registro form label.foto-container span{
+    background-color: var(--primary);
+    padding: 10px 20px;
+    color: inherit;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  #registro form label.foto-container input{
+    display: none;
+  }
+  
+  #registro form label input{
+    width:100%
+  }
+  
+  #registro .controles{
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #registro img{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    position: absolute;
+    right:-32px;
+    bottom:-32px;
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+  }
+
+  #registro span{
+    margin-top: 15px;
+  }
+
+  #registro a{
+    text-decoration: none;
+    color: rgb(177, 177, 177);
+    margin-top: 10px;
+  }
