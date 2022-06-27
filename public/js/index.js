@@ -125,7 +125,28 @@ async function login(){
 
         // Mudar para página interna...
         mostrarApp(corpoDaResposta.usuario);
+
+        // Carregar amigos do usuario
+        loadAmigos();
     }
+}
+
+async function loadAmigos(){
+    
+    // Disparar requisição para get /amigos
+    let response = await fetch(
+        '/api/v1/amigos',
+        {
+            method:'GET',
+            headers: {
+                'Authorization':`bearer ${sessionStorage.getItem('token')}`
+            }
+        }
+    )
+
+    console.log(response);
+
+    // Exibir os amigos do usuário na tela
 }
 
 
