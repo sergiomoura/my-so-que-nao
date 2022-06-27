@@ -71,10 +71,12 @@ function onFormLoginSubmit(evt){
 }
 
 function mostrarApp(usuario){
-    console.log(usuario);
 
     // Esconder a div de registro
     document.getElementById("registro").style.display = 'none';
+
+    // Esconder a div de login
+    document.getElementById("login").style.display = 'none'
 
     // Mostrar a div da aplicação
     document.getElementById("app").style.display = 'block';
@@ -110,6 +112,20 @@ async function login(){
             }
         }
     )
+
+    // Verificar se o status da response é 200
+    if(response.status == 200){
+        
+        // Extraindo dados da response
+        let corpoDaResposta = await response.json();
+
+        // Salvar o token... (?)
+        sessionStorage.setItem('token', corpoDaResposta.token);
+        sessionStorage.setItem('usuario', JSON.stringify(corpoDaResposta.usuario));
+
+        // Mudar para página interna...
+        mostrarApp(corpoDaResposta.usuario);
+    }
 }
 
 

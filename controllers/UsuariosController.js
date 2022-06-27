@@ -76,12 +76,20 @@ module.exports = {
 
         if(senhaOk){
 
-            // Criar o token
+            // Extraindo o objeto literal do Model
             u = u.toJSON();
+
+            // Removendo os campos desnecessários p/ front
+            delete u.senha;
+            delete u.createdAt;
+            delete u.updatedAt;
+            delete u.deletedAt;
+            
+            // Criar o token
             let token = jwt.sign(u, 'SEGREDO');
 
             // Caso de sucesso: Respondendo OK
-            return res.status(200).json({msg:'Sucesso!', token});
+            return res.status(200).json({usuario: u, token});
 
         } else {
             // Caso de fracasso: Respondendo NOT OK
