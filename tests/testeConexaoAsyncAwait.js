@@ -12,15 +12,13 @@ const config = {
 }
 
 // 3 - Criar a conexão com o banco!
-const conexao = new sequelize(config)
+const conexao = new sequelize(config);
 
 // 4 - Realizar uma consulta!!!
-let promessa = conexao.query("SELECT * FROM funcionarios LIMIT 0,5");
+let carregarFuncionarios = async ()=>{
+    let resultado = await conexao.query("SELECT * FROM funcionarios");
+    console.log(resultado);
+}
 
-promessa
-.then(
-    (dados)=>{
-        console.log(dados)
-        conexao.close();
-    }
-)
+// Executar a função carregarFuncionarios
+carregarFuncionarios();
