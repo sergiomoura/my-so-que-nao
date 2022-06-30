@@ -19,11 +19,14 @@ let promessa1 = conexao.query("SELECT * FROM funcionarios LIMIT 0,5");
 let promessa2 = conexao.query("SELECT * FROM oss LIMIT 0,1");
 let promessa3 = conexao.query("SELECT * FROM bairros LIMIT 0,2");
 
-promessa1.then(
+promessa1
+.then(
     (dados)=>{
         console.log(dados)
         conexao.close();
     }
+).catch(
+    err => console.log(err)
 )
 
 promessa2.then(
