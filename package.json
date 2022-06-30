@@ -1,28 +1,23 @@
 {
   "name": "my-so-que-nao",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./bin/www",
+    "dev": "nodemon ./node_modules/.bin/www"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sergiomoura/my-so-que-nao.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/sergiomoura/my-so-que-nao/issues"
-  },
-  "homepage": "https://github.com/sergiomoura/my-so-que-nao#readme",
   "dependencies": {
-    "express": "^4.18.1",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.1",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.19.2",
+    "sequelize-cli": "^6.4.1"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.4.1"
+    "nodemon": "^2.0.16"
   }
 }
