@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    return sequelize.define(
+    let publicacao =  sequelize.define(
         "Publicacao",
         {
             id: {
@@ -26,4 +26,10 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: false
         }
     )
+
+    publicacao.associate = (models) => {
+        publicacao.belongsTo(models.Usuario, {foreignKey:"usuarios_id", as:"autor"})
+    }
+
+    return publicacao;
 }
