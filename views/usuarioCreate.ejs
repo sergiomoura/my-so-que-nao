@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        html {
+            height: 100%;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+        main {
+            width: 400px;
+            padding: 50px;
+            background-color: #CCC;
+        }
+
+        form label{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        form label span{
+            display: block;
+            font-size: 10px;
+        }
+        
+    </style>
+</head>
+<body>
+    
+    <main>
+        <h2>Registre-se</h2>
+        <form action="/create" method="post">
+            <label>
+                <span>Nome</span>
+                <input type="text" name="nome">
+            </label>
+            <label>
+                <span>E-mail</span>
+                <input type="text" name="email">
+            </label>
+            <label>
+                <span>Senha</span>
+                <input type="password" name="senha">
+            </label>
+            <label>
+                <span>Confirmação de Senha</span>
+                <input type="password" name="confirmacao">
+            </label>
+            <div>
+                <button type="submit">Enviar</button>
+            </div>
+        </form>
+    </main>
+    
+</body>
+</html>

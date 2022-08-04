@@ -12,5 +12,10 @@ router.get(
     UsuariosController.create
 )
 
+router.post(
+    '/create',
+    UsuariosController.store
+)
+
 // Expostar o roteador e UTILIZÁ-LO no app.js
 module.exports = router;
