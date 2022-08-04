@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -25,6 +27,7 @@
     "sequelize": "^6.21.1"
   },
   "devDependencies": {
+    "nodemon": "^2.0.19",
     "sequelize-cli": "^6.4.1"
   }
 }
