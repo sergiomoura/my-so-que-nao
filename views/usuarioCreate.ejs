@@ -7,44 +7,44 @@
     <title>Document</title>
     <style>
         
-        html {
-            height: 100%;
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
-        }
-        
-        h2 {
-            margin: 0;
-            padding: 0;
-        }
-        main {
-            width: 400px;
-            padding: 50px;
-            background-color: #CCC;
-        }
-
-        form label{
-            display: block;
-            margin-bottom: 10px;
-        }
-
-        form label span{
-            display: block;
-            font-size: 10px;
-        }
+        html{
+        height: 100%;
+      }
+      body{
+        margin: 0;
+        padding: 0px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+    h2{
+        margin: 0;
+        padding: 0;
+    }
+    main{
+        width: 400px;
+        padding: 50px;
+        background-color: indigo;
+        border-radius: 8px;
+        box-shadow: 5px 5px 5px black;
+    }
+    form label{
+        display: block;
+        margin-bottom: 10px;
+    }
+    .regis{
+        color: aliceblue;
+       padding: 7px;
+       text-align: center;
+    }
         
     </style>
 </head>
 <body>
     
     <main>
-        <h2>Registre-se</h2>
+        <h2 class="regis">Registre-se</h2>
         <form action="/create" method="post">
             <label>
                 <span>Nome</span>
@@ -61,6 +61,14 @@
             <label>
                 <span>Confirmação de Senha</span>
                 <input type="password" name="confirmacao">
+            </label>
+            <label>
+                <span>Gênero</span>
+                <select>
+                    <option selected disabled>Menino ou Menina?</option>
+                    <option value="m">Menino</option>
+                    <option value="f">Menina</option>
+                </select>
             </label>
             <div>
                 <button type="submit">Enviar</button>
