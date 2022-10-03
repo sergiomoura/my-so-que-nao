@@ -15,5 +15,5 @@ app.use(session({
 }));
 
 app.use('/', UsuariosRouter);
-
+console.log("Aqui é servidor, meu amigo!")
 app.listen(3000,()=>{console.log("Estou escutando na porta 3000")})
