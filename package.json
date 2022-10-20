@@ -18,11 +18,12 @@
   },
   "homepage": "https://github.com/sergiomoura/my-so-que-nao#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
     "express": "^4.18.1",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.19.0"
+    "sequelize": "^6.25.2"
   },
   "devDependencies": {
-    "sequelize-cli": "^6.4.1"
+    "sequelize-cli": "^6.5.1"
   }
 }
