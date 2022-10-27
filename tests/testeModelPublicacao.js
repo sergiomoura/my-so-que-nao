@@ -1,7 +1,7 @@
 const {Publicacao, sequelize} = require('../database/models');
-Publicacao.findAll({include:'autor', attributes:['id','texto']}).then(
+Publicacao.findByPk(33, {include:['autor', 'curtidores'], attributes:['id','texto']}).then(
     data => {
-        data.forEach(d => console.log(d.toJSON()));
+        console.log(data.toJSON());
         sequelize.close();
     }
 )
