@@ -1,3 +1,8 @@
-const {Usuario} = require('../database/models');
+const {Usuario, sequelize} = require('../database/models');
 
-console.log(Usuario.findAll());
+Usuario.findAll({include:'publicacoes'}).then(
+    arrayDeUsuarios => {
+        arrayDeUsuarios.forEach(u=> console.log(u.toJSON()));
+        sequelize.close();
+    }
+);

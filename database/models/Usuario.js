@@ -1,6 +1,6 @@
-module.exports = (sequelize, DataTypes)=>{
+module.exports = (sequelize, DataTypes) => {
 
-    return sequelize.define(
+    let usuario = sequelize.define(
         "Usuario", // Nome do model
         {
             id: {
@@ -32,5 +32,11 @@ module.exports = (sequelize, DataTypes)=>{
             paranoid: true
         }
     );
+    
+    usuario.associate = (models) => {
+        usuario.hasMany(models.Publicacao, {foreignKey: 'usuarios_id', as:'publicacoes'});
+    }
+
+    return usuario;
 
 }
