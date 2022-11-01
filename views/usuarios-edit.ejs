@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="/usuarios/<%=usuario.id%>/update" method="post">
+        <input type="hidden" name="id" value="<%=usuario.id%>">
+        <label for="nome">
+            <span>Nome:</span>
+            <input type="text" name="nome" id="nome" value="<%=usuario.nome%>">
+        </label>
+        <label for="email">
+            <span>E-mail:</span>
+            <input type="text" name="email" id="email" value="<%=usuario.email%>">
+        </label>
+        <label for="senha">
+            <span>Senha:</span>
+            <input type="password" name="senha" id="senha">
+        </label>
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

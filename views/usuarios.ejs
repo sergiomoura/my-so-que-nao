@@ -9,7 +9,9 @@
 <body>
     <ul>
         <% for(let u of usuarios) {%>
-            <li><%= u.id %> | <%= u.nome %> | <%= u.email %></li>
+            <li>
+                <a href="/usuarios/<%= u.id %>/edit"><%= u.id %> | <%= u.nome %> | <%= u.email %></a>
+            </li>
         <% } %>
     </ul>
 </body>

@@ -17,6 +17,26 @@ const UsuariosController = {
             }
         );
         res.redirect('/usuarios');
+    },
+    edit: async (req, res) => {
+        let id = req.params.id;
+        let usuario = await Usuario.findByPk(id);
+        res.render('usuarios-edit.ejs', {usuario});
+    },
+    update: async (req,res) => {
+        let id = req.params.id;
+        // let id = req.body.id;
+
+        await Usuario.update(
+            {
+                nome: req.body.nome,
+                email: req.body.email,
+                senha: req.body.senha
+            },
+            {where:{id}}
+        );
+
+        res.redirect('/usuarios');
     }
 }
 
