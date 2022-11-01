@@ -11,6 +11,10 @@
         <% for(let u of usuarios) {%>
             <li>
                 <a href="/usuarios/<%= u.id %>/edit"><%= u.id %> | <%= u.nome %> | <%= u.email %></a>
+                <form action="/usuarios/<%= u.id %>/delete" method="post">
+                    <input type="hidden" name="id" value="<%= u.id %>">
+                    <button type="submit">remover</button>
+                </form>
             </li>
         <% } %>
     </ul>

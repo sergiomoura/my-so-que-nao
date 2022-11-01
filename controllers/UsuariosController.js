@@ -37,6 +37,11 @@ const UsuariosController = {
         );
 
         res.redirect('/usuarios');
+    },
+    delete: async (req, res)=>{
+        let id = req.params.id;
+        await Usuario.destroy({where:{id}});
+        res.redirect('/usuarios');
     }
 }
 
